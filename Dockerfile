@@ -11,7 +11,9 @@ RUN wget "http://www.apache.org/dyn/closer.lua?filename=drill/drill-$DRILL/$PACK
 
 RUN tar -xzvf $APACHE/archive/drill.tar.gz --directory $APACHE/drill --strip-components=1
 
-ADD conf/ $APACHE/drill/conf/
+ENV DRILL_CONF_DIR $APACHE/drill/conf
+
+ADD conf/ $DRILL_CONF_DIR/
 
 WORKDIR $APACHE
 
