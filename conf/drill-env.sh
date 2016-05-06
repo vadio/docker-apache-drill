@@ -19,15 +19,15 @@ DRILL_HEAP=${DRILL_HEAP:-1G}
 DRILLBIT_JAVA_OPTS=""
 
 if [[ $CLUSTER_ID ]]; then
-  DRILLBIT_JAVA_OPTS += " -Dcluster.id=$CLUSTER_ID"
+  DRILLBIT_JAVA_OPTS+=" -Dcluster.id=$CLUSTER_ID"
 fi
 
 if [[ $ZK_CONNECT ]]; then
-  DRILLBIT_JAVA_OPTS += " -Dzk.connect=$ZK_CONNECT"
+  DRILLBIT_JAVA_OPTS+=" -Dzk.connect=$ZK_CONNECT"
 fi
 
 if [[ $HTTP_PORT ]]; then
-  DRILLBIT_JAVA_OPTS += " -Dhttp.port=$HTTP_PORT"
+  DRILLBIT_JAVA_OPTS+=" -Dhttp.port=$HTTP_PORT"
 fi
 
 export DRILL_JAVA_OPTS="-Xms$DRILL_HEAP -Xmx$DRILL_HEAP -XX:MaxDirectMemorySize=$DRILL_MAX_DIRECT_MEMORY -XX:MaxPermSize=512M -XX:ReservedCodeCacheSize=1G -Ddrill.exec.enable-epoll=true"
