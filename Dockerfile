@@ -1,6 +1,6 @@
 FROM java:8-jre
 
-ENV DRILL 1.6.0
+ENV DRILL 1.7.0
 
 ENV APACHE /opt/apache
 RUN mkdir -p $APACHE/archive $APACHE/drill
