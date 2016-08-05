@@ -19,7 +19,7 @@ DRILL_HEAP=${DRILL_HEAP:-1G}
 DRILLBIT_JAVA_OPTS=""
 
 if [[ $CLUSTER_ID ]]; then
-  DRILLBIT_JAVA_OPTS+=" -Dcluster.id=$CLUSTER_ID"
+  DRILLBIT_JAVA_OPTS+=" -Dcluster-id=$CLUSTER_ID"
 fi
 
 if [[ $ZK_CONNECT ]]; then
